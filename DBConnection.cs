@@ -37,6 +37,8 @@ namespace Laba1
             try
             {
                 dbconn.ConnectionString = String.Format("Host={0};Username={2};Password={3};Database={1}", host, db, name, password);
+                dbconn.Open();
+                dbconn.Close();
                 isConn = true;
 
             }
