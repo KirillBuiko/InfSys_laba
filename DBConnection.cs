@@ -285,7 +285,7 @@ namespace Laba1
         {
             Process dump = new Process();
             dump.StartInfo.FileName = "C:/Program Files/PostgreSQL/13/bin/pg_dump.exe";
-            dump.StartInfo.Arguments = $"--dbname=postgresql://postgres:admin@127.0.0.1:5432/{DB} -F c -f {path}/{DB}.db";
+            dump.StartInfo.Arguments = $"--dbname=postgresql://postgres:admin@127.0.0.1:5432/{DB} -F c -f \"{path}/{DB}.db\"";
             dump.StartInfo.UseShellExecute = false;
             dump.StartInfo.CreateNoWindow = true;
             dump.Start();
@@ -297,7 +297,7 @@ namespace Laba1
         {
             Process dump = new Process();
             dump.StartInfo.FileName = "C:/Program Files/PostgreSQL/13/bin/pg_restore.exe";
-            dump.StartInfo.Arguments = $"--dbname=postgresql://postgres:admin@127.0.0.1:5432/{DB} -c -F c {path}/{DB}.db";
+            dump.StartInfo.Arguments = $"--dbname=postgresql://postgres:admin@127.0.0.1:5432/{DB} -c -F c \"{path}/{DB}.db\"";
             dump.StartInfo.UseShellExecute = false;
             dump.StartInfo.CreateNoWindow = true;
             dump.Start();
